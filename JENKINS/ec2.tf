@@ -1,6 +1,6 @@
 # configured aws provider with proper credentials
 provider "aws" {
-  region    = "us-east-1"
+  region    = "us-east-2"
   profile   = "default"
 }
 
@@ -106,7 +106,7 @@ resource "aws_instance" "ec2_instance" {
   instance_type          = "t2.small"
   subnet_id              = aws_default_subnet.default_az1.id
   vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
-  key_name               = "bada"
+  key_name               = "ohioKP"
   user_data = "${file("install_jenkins.sh")}"
 
   tags = {
